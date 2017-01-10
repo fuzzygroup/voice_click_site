@@ -1,1 +1,15 @@
-<h3>Welcome</h3>
+<% content_for :title do %>VoiceClick<% end %>
+<div class="jumbotron">
+  <h1 class="display-2">Welcome</h1>
+  <p class="lead">
+    <strong>VoiceClick</strong> is a consulting firm focused on the development of Voice User Interface (<em>VUI</em>) applications primarily for the Amazon Alexa platform.  
+  </p>
+  <p>Please leave your email address to be added to our mailing list:<p>
+  <%= simple_form_for(@mailing_list, html: { class: 'form-inline' }) do |form| %>
+    <%= form.input :email, :label => "Your Email:"%>&nbsp;&nbsp;
+    <%= form.submit "Sign Up!", :class => 'btn btn-primary btn-lg'%>
+  <% end %>
+  
+  <p style="text-align:right">The founders, <%= link_to("Scott", SCOTT_HOME_PAGE_URL) %> &amp; <%= link_to("Nick", NICK_HOME_PAGE_URL)%></p>
+  </p>
+</div>
